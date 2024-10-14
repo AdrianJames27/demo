@@ -53,7 +53,7 @@ class OrderController extends Controller
                     // Store item details
                     $itemsDetails[] = [
                         'item_name' => $item->name,
-                        'quantity' => $orderItem->quantity,
+                        'quantity' => $item->quantity,
                         'unit_price' => $item->price,
                         'total_price' => $totalPrice,
                     ];
