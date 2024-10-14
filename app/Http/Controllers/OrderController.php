@@ -55,20 +55,20 @@ class OrderController extends Controller
                         'item_name' => $item->name,
                         'quantity' => $item->quantity,
                         'unit_price' => $item->price,
-                        'total_price' => $totalPrice,
+                        'total_price' => $totalPrice
                     ];
                 }
             }
 
             $orderDetails = [
                 'items' => $itemsDetails,
-                'total_amount_ordered' => $totalAmountOrdered,
+                'total_amount_ordered' => $totalAmountOrdered
             ];
         } else {
             // Handle the case where the order is not found
             $orderDetails = [
                 'items' => [],
-                'total_amount_ordered' => 0,
+                'total_amount_ordered' => 0
             ];
         }
 

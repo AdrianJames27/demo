@@ -19,11 +19,10 @@
                         <td> {{ $order->transaction_no }} </td>
                         <td> {{ $order->customer_name }} </td>
                         <td> {{ $order->state }} </td>
-                        <td role="button" class="btn btn-sm btn-primary w-100" 
-                            id="btnShowDetails" 
+                        <td role="button" class="btn btn-sm btn-primary w-100 btnShowDetails"
                             data-bs-toggle="modal" 
                             data-bs-target="#orderModal" 
-                            data-transactionNo="{{ $order->transaction_no }}"
+                            data-transaction-no="{{ $order->transaction_no }}"
                         >
                             <i class="fa-regular fa-folder-open"></i>
                         </td>
@@ -61,9 +60,9 @@
 
 <script>
     $(document).ready(function() {
-        $('#btnShowDetails').on('click', function(e) {
-            const transactionNo = e.target.getAttribute('data-transactionNo');
-            
+        $('.btnShowDetails').on('click', function(e) {
+            const transactionNo = e.target.getAttribute('data-transaction-no');
+
             $.ajax({
                 url: '/order_details',
                 method: 'GET',
